@@ -58,7 +58,7 @@ import Hero from '~/components/shared/Hero'
 import { mapState } from 'vuex'
 export default {
   head: {
-    title: 'Online Courses and Blogs | Filip Jerga'
+    title: 'Online Courses and Blogs | Shyam Ji Tiwari'
   },
   components: {
     CourseCard, BlogCard, Hero, CourseCardTooltip

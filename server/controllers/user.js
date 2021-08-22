@@ -74,6 +74,7 @@ exports.login = function (req, res, next) {
   }
 
   return passport.authenticate('local', (err, passportUser) => {
+    
     if (err) {
       return next(err)
     }

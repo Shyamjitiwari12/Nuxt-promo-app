@@ -38,7 +38,7 @@ import CourseCardTooltip from '~/components/CourseCardTooltip'
 import { mapState } from 'vuex'
 export default {
   head: {
-    title: 'Tech Courses | Filip Jerga'
+    title: 'Tech Courses | Shyam Ji Tiwari'
   },
   components: {
     CourseCard, CourseCardTooltip

@@ -68,7 +68,7 @@
 import { mapState } from 'vuex'
 export default {
   head: {
-    title: 'Amazing tech blogs | Filip Jerga'
+    title: 'Amazing tech blogs | Shyam Ji Tiwari'
   },
   computed: {
     ...mapState({

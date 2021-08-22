@@ -104,7 +104,7 @@ export default {
   computed: {
     ...mapState({
       published: ({instructor}) => instructor.blog.items.published,
-      drafts: ({instructor}) => instructor.blog.items.drafts
+      drafts: ({instructor}) => instructor.blog.items.drafts,
     }),
     draftsOptions() {
       return createDraftsOptions()

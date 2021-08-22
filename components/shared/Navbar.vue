@@ -33,6 +33,12 @@
         <nav-link to="/blogs" class="navbar-item">
           Blogs
         </nav-link>
+        <nav-link to="/products" class="navbar-item">
+          Contentful Products
+        </nav-link>
+        <nav-link to="/shopify" class="navbar-item">
+          Shopify Products
+        </nav-link>
         <nav-link to="/about" class="navbar-item">
           About
         </nav-link>
@@ -63,6 +69,7 @@
               </a>
             </template>
             <template v-else>
+              <cart class="button is-light" />
               <nuxt-link to="/register" class="button is-primary">
                 Sign up
               </nuxt-link>
@@ -78,7 +85,9 @@
 </template>
 <script>
 import { mapGetters } from 'vuex'
+import Cart from '~/components/shared/Cart'
 export default {
+  components:{Cart},
   data() {
     return {
       isActive: false

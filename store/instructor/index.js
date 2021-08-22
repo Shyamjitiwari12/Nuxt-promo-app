@@ -1,7 +1,8 @@
 
 
 export const state = () => ({
-  heroes: []
+  heroes: [],
+  entries: []
 })
 
 export const actions = {
@@ -19,11 +20,21 @@ export const actions = {
         return activeHero
       })
       .catch(error => Promise.reject(error))
-  }
+  },
+  fetchEntries({state, commit}) {
+    return this.$axios.$get('https://cdn.contentful.com/spaces/cfexampleapi/entries?access_token=b4c0n73n7fu1',{ 'Authorization' : 'Bearer b4c0n73n7fu1', 'Content-Type' : 'application/json'})
+      .then(entries => {
+        commit('setEntries', entries.items)
+        return state.entries
+      })
+  },
 }
 
 export const mutations = {
   setHeroes(state, heroes) {
     state.heroes = heroes
+  },
+  setEntries(state, entries) {
+    state.entries = entries
   }
 }

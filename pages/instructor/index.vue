@@ -23,6 +23,12 @@
             Heroes
           </div>
         </div>
+        <!-- Go to /instructor/entries -->
+        <div class="box" @click="$router.push('/instructor/entries')">
+          <div>
+            Entries
+          </div>
+        </div>
       </div>
     </div>
   </div>

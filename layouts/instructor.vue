@@ -2,6 +2,7 @@
   <nuxt />
 </template>
 <script>
+
 export default {
   middleware: 'admin',
 }

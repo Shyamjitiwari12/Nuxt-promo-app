@@ -20,6 +20,7 @@ export const getters = {
 
 export const actions = {
   login({commit, state}, loginData) {
+    debugger
     return this.$axios.$post('/api/v1/users/login', loginData)
       .then(user => {
         commit('setAuthUser', user)

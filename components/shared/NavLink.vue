@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     isActive() {
-      debugger
+      
       return this.to === this.$route.path
     }
   }

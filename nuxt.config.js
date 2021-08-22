@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 module.exports = {
   mode: 'universal',
   /*
@@ -18,8 +18,10 @@ module.exports = {
       { hid: 'og:description', name: 'og:description', content: 'My name is Filip Jerga and I am an experienced software engineer and freelance developer.' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {rel: 'stylesheet', href:'https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css'}
     ],
+    
     script: [
       { src: 'https://kit.fontawesome.com/d33a83f69c.js' }
     ]
@@ -49,7 +51,11 @@ module.exports = {
     {src: '~/plugins/components'},
     {src: '~/plugins/tooltip'},
     {src: '~/plugins/toasted', ssr: false},
-    {src: '~/plugins/paginate', ssr: false}
+    {src: '~/plugins/paginate', ssr: false},
+    {src: '~/plugins/contenful', ssr: false},
+    {src: '~/plugins/shopify', ssr: false},
+
+   
   ],
   /*
   ** Nuxt.js modules
@@ -58,7 +64,8 @@ module.exports = {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     'portal-vue/nuxt',
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
@@ -70,6 +77,25 @@ module.exports = {
   serverMiddleware: [
     '~/server/routes/index'
   ],
+
+  buildModules: [
+    // GraphQl Apollo Client
+      '@nuxtjs/apollo'
+  ],
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: 'https://digitup1.myshopify.com/api/2021-07/graphql.json',
+        httpLinkOptions: {
+          headers: {
+              "Content-Type": "application/json",
+              "X-Shopify-Storefront-Access-Token":
+                  "a085b88549cdd832eb1de618ff86bb29"
+          }
+        }
+      }
+    }
+  },
   /*
   ** Build configuration
   */

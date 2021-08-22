@@ -4,6 +4,10 @@ const { Nuxt, Builder } = require('nuxt')
 const app = express()
 const keys = require('./keys');
 
+const cors=require("cors"); const corsOptions ={ origin:'*', credentials:true }
+
+app.use(cors(corsOptions))
+
 const config = require('../nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
 

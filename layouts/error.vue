@@ -9,6 +9,7 @@
 
 <script>
 import ErrorView from '@/components/shared/ErrorView'
+
 export default {
   components: {
     ErrorView

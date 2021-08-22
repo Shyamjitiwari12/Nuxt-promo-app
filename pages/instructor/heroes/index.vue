@@ -70,10 +70,16 @@ export default {
     },
     activeHero() {
       return this.$store.state.hero.item
-    }
+    },
+    // entries(){
+    //   return this.$store.state.instructor.entries
+
+    // }
   },
   async fetch({store}) {
     await store.dispatch('instructor/fetchHeroes')
+    // await store.dispatch('instructor/fetchEntries')
+
   },
   methods: {
     openModal(modalId) {
