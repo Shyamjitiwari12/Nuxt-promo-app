@@ -17,12 +17,12 @@ export const state = () => ({
     addToCartShopify({commit, state},product){
         debugger
         product.quantity = 1;
-        product.total = product.quantity * product.node.price
+        product.total = product.quantity * product.price
             
             const checkoutId = state.checkoutId ;
             const lineItemsToAdd = [
                 {
-                    variantId: product.node.id,
+                    variantId: product.id,
                     quantity: product.quantity,
                     
                 }

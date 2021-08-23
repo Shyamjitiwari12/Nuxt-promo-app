@@ -6,9 +6,10 @@
         <div class="columns is-multiline">
           <!-- iterate columns with v-for and don't forget :key -->
           <div
-            v-for="variant in node.variants.edges"
-            :key="variant.node.id"
+            v-for="variant in variants"
+            :key="variant.id"
             class="column is-one-quarter">
+            
             <!-- pass a course as a prop to course-card -->
             <v-popover
               offset="16"
@@ -65,16 +66,19 @@ export default {
   },
   data(){
       return{
-          product : {}
+          product : {},
+          variants : []
       }
   },
   methods : {
-    fetchShopifyProduct(){
+    async fetchShopifyProduct(){
 
-        const productId = 'Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzY3NTIxNDY1MjIyODM=';
-        Client.product.fetch(productId).then((product) => {
-        console.log(product.title);
+        const productId = this.$route.params.id;
+        console.log('id'+ productId);
+        await Client.product.fetch(productId).then((product) => {
+        console.log(product.variants);
         this.product = product;
+        this.variants = product.variants
         });
     },
     addToCart(variant){
@@ -98,7 +102,7 @@ export default {
         // Do something with the updated checkout
         console.log(checkout.lineItems); // Array with one additional line item
         });
-    }
+    },
   },
   created(){
       this.fetchShopifyProduct();

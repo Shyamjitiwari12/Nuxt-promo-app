@@ -2,19 +2,19 @@
   <div class="card">
     <div class="card">
       <figure class="image ">
-        <img :src="variant.node.image.originalSrc" alt="Placeholder image">
+        <img :src="variant.image.src" alt="Placeholder image">
       </figure>
     </div>
     <div class="card-content">
       <div class="media">
         <div class="media-content">
-          <p class="title is-4">{{variant.node.title | shortenText(45)}}</p>
+          <p class="title is-4">{{variant.title | shortenText(45)}}</p>
           <!-- <p class="subtitle is-6"><i>at {{product.sys.createdAt | formatDate}}</i></p> -->
         </div>
       </div>
       
        <div class="price-box">
-        <span class="price">{{variant.node.price}}$</span>
+        <span class="price">{{variant.price}}$</span>
         
       </div> 
     </div>
