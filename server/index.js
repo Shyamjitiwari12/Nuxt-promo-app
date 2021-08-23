@@ -4,9 +4,7 @@ const { Nuxt, Builder } = require('nuxt')
 const app = express()
 const keys = require('./keys');
 
-const cors=require("cors"); const corsOptions ={ origin:'*', credentials:true }
 
-app.use(cors(corsOptions))
 
 const config = require('../nuxt.config.js')
 config.dev = !(process.env.NODE_ENV === 'production')
@@ -26,6 +24,10 @@ async function start() {
 
   // Give nuxt middleware to express
   app.use(nuxt.render)
+
+  const cors=require("cors"); const corsOptions ={ origin:'*', credentials:true }
+
+  app.use(cors(corsOptions))
 
   // Listen the server
   app.listen(port, host)
