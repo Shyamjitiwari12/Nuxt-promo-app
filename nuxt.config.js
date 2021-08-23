@@ -97,8 +97,8 @@ module.exports = {
     }
   },
 
-  target: 'static'
-  
+  target: 'static',
+
   /*
   ** Build configuration
   */
