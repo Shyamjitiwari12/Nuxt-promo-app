@@ -1,8 +1,8 @@
 const contentful = require('contentful')
 
 const client = contentful.createClient({
-    space : process.env.CTF_SPACE_ID ,
-    accessToken: process.env.CTF_ACCESS_TOKEN
+    space : '72782df9afoq' ,
+    accessToken: 'lqdJV-3zY107xPfTpo9VbBTac7-RlHIPNww4BWzT5ag'
 })
 
 module.exports = client
