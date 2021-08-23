@@ -96,6 +96,9 @@ module.exports = {
       }
     }
   },
+
+  target: 'static'
+  
   /*
   ** Build configuration
   */
