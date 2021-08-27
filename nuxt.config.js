@@ -52,8 +52,8 @@ module.exports = {
     {src: '~/plugins/tooltip'},
     {src: '~/plugins/toasted', ssr: false},
     {src: '~/plugins/paginate', ssr: false},
-    {src: '~/plugins/contenful', ssr: false},
-    {src: '~/plugins/shopify', ssr: false},
+    {src: '~/plugins/contenful'},
+    {src: '~/plugins/shopify'},
 
    
   ],
