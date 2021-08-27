@@ -5,7 +5,7 @@
         <span class="icon">
           <i class="fab fa-github"></i>
         </span>
-        <p>Github <a target="_" href="https://github.com/Shyamjitiwari/nuxt-promo-app">https://github.com/Shyamjitiwari</a></p>
+        <p>Github <a target="_" href="https://github.com/Shyamjitiwari12/Nuxt-promo-app">https://github.com/Shyamjitiwari12</a></p>
       </div>
     </div>
   </div>
